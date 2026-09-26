@@ -41,4 +41,8 @@ public class AuthController {
     public AuthResponse login(@Valid @RequestBody LoginRequest request) {
         return authService.login(request);
     }
+    @GetMapping("/health")
+    public org.springframework.http.ResponseEntity<String> healthCheck() {
+        return org.springframework.http.ResponseEntity.ok("OK");
+    }
 }
